@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css'
 
 function App() {
-  const [name, setName] = useState('');
+  const [ingredient, setIngredient] = useState('');
   const [amount, setAmount] = useState('');
   const [unit, setUnit] = useState('grams');
 
@@ -18,8 +18,8 @@ function App() {
           <input
             type="text"
             placeholder="Add an ingredient"
-            value={name}
-            onChange={e => setName(e.target.value)}
+            value={ingredient}
+            onChange={e => setIngredient(e.target.value)}
             style={{
               padding: '6px 10px',
             }}
