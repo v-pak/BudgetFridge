@@ -1,8 +1,9 @@
-import express, { json, NextFunction, Request, Response } from 'express';
+import express, { json, Request, Response } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import config from './config.json';
 import process from 'process';
+import { generateRecipe } from './ai'; 
 
 const PORT: number = parseInt(process.env.PORT || config.port);
 const HOST: string = process.env.IP || '127.0.0.1';
@@ -20,6 +21,13 @@ app.use(morgan('dev'));
 // ====================================================================
 // ========================= API ROUTES ===============================
 // ====================================================================
+
+app.post('/api/recipes', (req: Request, res: Response) => {
+  // FIXME Discuss exactly the data types that is passed and through what methods
+  res.json(generateRecipe(req.body));
+
+  // TODO Need to handle errors
+});
 
 app.use((req: Request, res: Response) => {
   res.status(404).json({ error: 'ROUTE_NOT_FOUND' });

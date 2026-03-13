@@ -39,4 +39,6 @@ export async function generateRecipe(req: RecipeRequest) {
       responseJsonSchema: z.toJSONSchema
     }
   });
+
+  // TODO Need to handle errors from Gemini or bad input
 }
