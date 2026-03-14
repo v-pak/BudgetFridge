@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Fruity Chicken Bake",
+    "imageDescription": "A rustic baking dish filled with tender chicken legs surrounded by baked apples, bananas, and carrots.",
+    "description": "A surprisingly delicious and easy weeknight meal that combines the savory flavor of chicken with the natural sweetness of baked fruits and vegetables. The carrots add a touch of earthy sweetness, while the apples and bananas caramelize beautifully.",
+    "ingredients": [
+      {
+        "name": "carrot",
+        "quantity": "3 medium"
+      },
+      {
+        "name": "banana",
+        "quantity": "3 ripe"
+      },
+      {
+        "name": "apple",
+        "quantity": "3 medium"
+      },
+      {
+        "name": "chicken leg",
+        "quantity": "3"
+      },
+      {
+        "name": "olive oil",
+        "quantity": "2 tablespoons"
+      },
+      {
+        "name": "salt",
+        "quantity": "1 teaspoon"
+      },
+      {
+        "name": "black pepper",
+        "quantity": "1/2 teaspoon"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "1/2 teaspoon (optional)"
+      }
+    ],
+    "cookTime": "45 minutes",
+    "serves": "3",
+    "steps": [
+      "Preheat your oven to 375°F (190°C).",
+      "Peel and chop the carrots into bite-sized pieces. Core and chop the apples into similar-sized pieces. Peel the bananas and slice them in half lengthwise.",
+      "In a large baking dish, toss the chopped carrots and apples with olive oil, salt, pepper, and cinnamon (if using).",
+      "Arrange the chicken legs among the carrots and apples in the baking dish. Season the chicken legs with a little more salt and pepper.",
+      "Bake for 30 minutes.",
+      "After 30 minutes, carefully add the banana halves to the baking dish, cut-side down, nestled among the other ingredients.",
+      "Continue baking for another 15-20 minutes, or until the chicken is cooked through (internal temperature reaches 165°F or 74°C) and the fruits and carrots are tender and slightly caramelized.",
+      "Serve the chicken legs with the baked fruits and vegetables."
+    ]
+  },
+  {
+    "name": "Honey Apple Chicken Skillet",
+    "imageDescription": "A cast-iron skillet with golden seared chicken thighs surrounded by caramelized apples, carrots, and a glossy honey glaze.",
+    "description": "This comforting one-pan meal pairs juicy seared chicken with sweet apples and tender carrots in a light honey glaze. The apples soften and caramelize while the chicken develops a rich golden crust, creating a simple but flavorful dinner.",
+    "ingredients": [
+      {
+        "name": "chicken thigh",
+        "quantity": "4"
+      },
+      {
+        "name": "apple",
+        "quantity": "2 medium"
+      },
+      {
+        "name": "carrot",
+        "quantity": "2 medium"
+      },
+      {
+        "name": "honey",
+        "quantity": "2 tablespoons"
+      },
+      {
+        "name": "olive oil",
+        "quantity": "1 tablespoon"
+      },
+      {
+        "name": "garlic",
+        "quantity": "2 cloves"
+      },
+      {
+        "name": "salt",
+        "quantity": "1 teaspoon"
+      },
+      {
+        "name": "black pepper",
+        "quantity": "1/2 teaspoon"
+      },
+      {
+        "name": "thyme",
+        "quantity": "1/2 teaspoon (optional)"
+      }
+    ],
+    "cookTime": "35 minutes",
+    "serves": "4",
+    "steps": [
+      "Core the apples and slice them into wedges. Peel the carrots and slice them into thin rounds. Mince the garlic.",
+      "Season the chicken thighs with salt and black pepper on both sides.",
+      "Heat olive oil in a large skillet over medium heat. Add the chicken thighs and cook for about 5-6 minutes per side until golden brown. Remove and set aside.",
+      "In the same skillet, add the carrots and cook for 3-4 minutes until slightly softened.",
+      "Add the apples and garlic, stirring gently. Cook for another 2-3 minutes.",
+      "Drizzle the honey over the apples and carrots and sprinkle in the thyme if using.",
+      "Return the chicken thighs to the skillet, nestling them among the apples and carrots.",
+      "Cover and cook on low heat for 12-15 minutes, or until the chicken is fully cooked (internal temperature reaches 165°F or 74°C).",
+      "Serve warm, spooning the honey-glazed apples and carrots over the chicken."
+    ]
+  },
+  {
+    "name": "Savory Chicken & Roasted Veggie Tray",
+    "imageDescription": "A sheet pan filled with roasted chicken thighs, golden potatoes, carrots, and onions with crispy edges.",
+    "description": "A hearty and simple sheet-pan dinner where juicy roasted chicken cooks alongside potatoes, carrots, and onions. Everything roasts together, soaking up the savory juices and developing crispy, caramelized edges.",
+    "ingredients": [
+      {
+        "name": "chicken thigh",
+        "quantity": "4"
+      },
+      {
+        "name": "potato",
+        "quantity": "3 medium"
+      },
+      {
+        "name": "carrot",
+        "quantity": "2 medium"
+      },
+      {
+        "name": "onion",
+        "quantity": "1 large"
+      },
+      {
+        "name": "olive oil",
+        "quantity": "2 tablespoons"
+      },
+      {
+        "name": "garlic powder",
+        "quantity": "1 teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "1 teaspoon"
+      },
+      {
+        "name": "black pepper",
+        "quantity": "1/2 teaspoon"
+      },
+      {
+        "name": "paprika",
+        "quantity": "1/2 teaspoon (optional)"
+      }
+    ],
+    "cookTime": "40 minutes",
+    "serves": "4",
+    "steps": [
+      "Preheat the oven to 400°F (200°C).",
+      "Peel and chop the potatoes into bite-sized chunks. Slice the carrots into rounds and cut the onion into wedges.",
+      "Place the vegetables on a large baking sheet. Drizzle with olive oil and season with salt, pepper, garlic powder, and paprika. Toss to coat evenly.",
+      "Season the chicken thighs with a little extra salt and pepper.",
+      "Arrange the chicken thighs on the baking sheet among the vegetables.",
+      "Roast for 35–40 minutes, stirring the vegetables halfway through, until the chicken is cooked through (internal temperature reaches 165°F or 74°C) and the vegetables are tender and golden.",
+      "Serve hot with the roasted vegetables spooned alongside the chicken."
+    ]
+  }
+]

@@ -1,6 +1,8 @@
 *.json
 !package.json
 node_modules
+!config.json
+!generateRecipe_responses.json
 
 # Dependency directory
 node_modules/
