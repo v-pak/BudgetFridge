@@ -5,6 +5,7 @@ import cors from 'cors';
 import config from './config.json';
 import process from 'process';
 import { generateRecipe } from './ai'; 
+import path from 'path';
 
 // Loads API key from .env
 dotenv.config();
@@ -21,6 +22,8 @@ app.use(json());
 app.use(cors());
 // for logging errors (print to terminal)
 app.use(morgan('dev'));
+
+const __dirname = new URL('.', import.meta.url).pathname;
 
 // ====================================================================
 // ========================= API ROUTES ===============================
@@ -41,6 +44,16 @@ app.post('/api/recipes', async (req: Request, res: Response) => {
 app.use((req: Request, res: Response) => {
   res.status(404).json({ error: 'ROUTE_NOT_FOUND' });
 });
+
+// Serve the built frontend
+app.use(express.static(path.join(__dirname, "../../frontend/budget-fridge/dist")));
+
+// SPA fallback
+// If the route exists in the frontend and not in the backend,
+// it will use that
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../../frontend/budget-fridge/dist/index.html"));
+// });
 
 // start server
 const server = app.listen(PORT, HOST, () => {
