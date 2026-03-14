@@ -15,10 +15,12 @@ const ai = new GoogleGenAI({
 
 // responseMimeType enforces a JSON response
 export async function generateRecipe(req: RecipeRequest) {
-  const prompt = `Using the following list of ingredients, generate three unique recipes. ${JSON.stringify(req.ingredients, null, 2)}`
+  console.log('hi from generateRecipe ai.ts');
+  console.log(req)
+  const prompt = `Using the following list of ingredients, generate three unique recipes. ${JSON.stringify(req, null, 2)}`
 
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash-lite',
+    model: 'gemini-2.5-flash',
     contents: prompt,
     config: {
       responseMimeType: 'application/json',
@@ -32,7 +34,7 @@ export async function generateRecipe(req: RecipeRequest) {
 
 // EXAMPLE USE
 // const res = await generateRecipe({
-//   ingredients: [
+//   [
 //     {
 //     name: 'carrot',
 //     amount: '3'
