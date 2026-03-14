@@ -4,6 +4,7 @@ import { RightPanel } from './components/RightPanel';
 import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import { RecipeProvider } from './context/RecipeProvider';
+import RecipePage from './pages/RecipePage';
 
 function Layout() {
   const isLanding = useLocation().pathname === '/';
@@ -33,7 +34,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path="/" />
             <Route path="/loading" />
-            <Route path="/recipe" />
+            <Route path="/recipe" element={<RecipePage />} />
             <Route path="/my-recipes" />
           </Route>
         </Routes>
