@@ -1,23 +1,19 @@
 import { useState } from 'react';
 import './index.css';
-import Navbar from './components/Navbar';
 import LeftPanel from './components/LeftPanel';
 import { RightPanel } from './components/RightPanel';
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
-export default function App() {
+function Layout() {
   const [ingredient, setIngredient] = useState('');
   const [amount, setAmount] = useState('');
-  const [unit, setUnit] = useState('grams');
-
-
-
+  const [unit, setUnit] = useState('');
 
   return (
     <>
-      <Navbar />
 
-      <div className="layout">
+      <div>
         <LeftPanel
           ingredient={ingredient}
           setIngredient={setIngredient}
@@ -32,12 +28,12 @@ export default function App() {
       </div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' />
-          <Route path='loading' />
-          <Route path='recipe' />
-          <Route path='my-recipes' />
+          <Route path="/" />
+          <Route path="/loading" />
+          <Route path="/recipe" />
+          <Route path="/my-recipes" />
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
