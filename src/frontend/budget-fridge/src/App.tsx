@@ -5,6 +5,7 @@ import { RecipeProvider } from './context/RecipeProvider';
 import HomePage from './pages/HomePage';
 import MyRecipesPage from './pages/MyRecipesPage';
 import RecipePage from './pages/RecipePage';
+import LoadingPage from './pages/LoadingPage';
 
 function Layout() {
   return (
@@ -24,7 +25,7 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/loading" element={<HomePage />} />
+            <Route path="/loading" element={<LoadingPage />} />
             <Route path="/recipe" element={<RecipePage />} />
             <Route path="/my-recipes" element={<MyRecipesPage />} />
           </Route>
