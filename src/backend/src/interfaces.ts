@@ -1,0 +1,3 @@
+interface RecipeRequest {
+  ingredients: string[];
+}
