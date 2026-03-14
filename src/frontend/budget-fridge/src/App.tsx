@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-
 import NavBar from './components/NavBar';
 import { RecipeProvider } from './context/RecipeProvider';
 import MyRecipesPage from './RecipesPage';
+import RecipePage from './pages/RecipePage';
 
 function Layout() {
   const isLanding = useLocation().pathname === '/';
@@ -34,7 +35,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path="/" />
             <Route path="/loading" />
-            <Route path="/recipe" />
+            <Route path="/recipe" element={<RecipePage />} />
             <Route path="/my-recipes" element={<MyRecipesPage />} />
           </Route>
         </Routes>

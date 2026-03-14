@@ -1,5 +1,4 @@
-import type { FridgeItem } from './types';
-import type { Recipe } from './types';
+import type { FridgeItem, Recipe } from './types';
 
 const FRIDGE_KEY = 'fridgeItems';
 const SAVED_KEY = 'savedRecipes';
@@ -26,14 +25,15 @@ export function getSavedRecipes(): Recipe[] {
   }
 }
 
-export function saveRecipe(recipe: Recipe): void {
-  const existing = getSavedRecipes();
-  if (existing.some((r) => r.name === recipe.name)) return;
-  localStorage.setItem(SAVED_KEY, JSON.stringify([...existing, recipe]));
+export function saveRecipe(recipe: Recipe): boolean {
+  const current = getSavedRecipes();
+  if (current.some((r) => r.name === recipe.name)) return false;
+  localStorage.setItem(SAVED_KEY, JSON.stringify([...current, recipe]));
+  return true;
 }
 
-export function deleteRecipe(name: string): Recipe[] {
+/** Removes the recipe matching the given name from localStorage. */
+export function deleteRecipe(name: string): void {
   const updated = getSavedRecipes().filter((r) => r.name !== name);
   localStorage.setItem(SAVED_KEY, JSON.stringify(updated));
-  return updated;
 }

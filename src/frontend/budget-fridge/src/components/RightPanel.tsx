@@ -1,7 +1,7 @@
 import { FridgeItemsList } from './FridgeItemsList';
 import PillButton from './PillButton';
 import { useNavigate } from 'react-router-dom';
-import { useRecipe } from '../hooks/useRecipe';
+import { useRecipe } from '../context/RecipeContext';
 
 export function RightPanel() {
   const { ingredients, removeIngredient } = useRecipe();
