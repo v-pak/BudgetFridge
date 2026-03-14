@@ -30,7 +30,7 @@ export default function LeftPanel() {
                 onAdd={handleAdd}
             />
             <span className="absolute left-5 bottom-10 writing-mode-vertical font-heading text-sm text-accent opacity-30 tracking-widest">
-                budget / fridge / 2024
+                budget / fridge / 2026
             </span>
         </div>
     );
