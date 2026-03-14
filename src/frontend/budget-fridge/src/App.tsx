@@ -1,18 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
-function App() {
+function Layout() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/'/>
-          <Route path='loading' />
-          <Route path='recipe' />
-          <Route path='my-recipes' />
-        </Routes>
-      </BrowserRouter>
+      <NavBar />
+      <main className="pt-18.25"> {/* offset for the fixed nav height */}
+        <Outlet />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" />
+          <Route path="/loading" />
+          <Route path="/recipe" />
+          <Route path="/my-recipes" />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
