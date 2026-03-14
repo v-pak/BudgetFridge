@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InputGroup } from "./InputGroup";
-import { useRecipe } from '../context/RecipeContext';
+import { useRecipe } from '../../context/RecipeContext';
 
 export default function LeftPanel() {
   const { addIngredient } = useRecipe();

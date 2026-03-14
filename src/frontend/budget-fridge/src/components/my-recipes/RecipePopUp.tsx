@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import type { Recipe } from '../utils/types';
-import PillButton from './PillButton';
+import type { Recipe } from '../../utils/types';
+import PillButton from '../utils/PillButton';
 import PopupImage from './PopupImage';
 import PopupIngredients from './PopupIngredients';
 import PopupSteps from './PopupSteps';

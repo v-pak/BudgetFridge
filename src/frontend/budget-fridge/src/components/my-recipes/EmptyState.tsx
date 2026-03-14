@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import PillButton from './PillButton';
+import PillButton from '../utils/PillButton';
 
 export default function EmptyState() {
   const navigate = useNavigate();
