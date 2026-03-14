@@ -11,6 +11,7 @@ export interface Recipe {
   cookTime: string;
   serves: string;
   steps: string[];
+  imageUrl?: string;
 }
 
 export interface RecipeContextValue {

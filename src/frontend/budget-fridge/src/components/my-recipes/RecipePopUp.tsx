@@ -49,7 +49,7 @@ export default function RecipePopup({ recipe, onClose, onDelete }: RecipePopupPr
           ×
         </button>
 
-        <PopupImage recipeName={recipe.name} />
+        <PopupImage recipeName={recipe.name} imageUrl={recipe.imageUrl} />
 
         <div className="px-9 pt-8 pb-9">
           <p className="font-body text-[11px] font-medium tracking-[0.15em] uppercase text-accent mb-2">

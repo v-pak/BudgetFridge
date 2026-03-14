@@ -19,9 +19,16 @@ export default function RecipeCard({ recipe, onClick }: RecipeCardProps) {
       "
     >
       <div
-        className="w-full aspect-[4/3] relative"
-        style={{ background: cardGradient(recipe.name) }}
+        className="w-full aspect-[4/3] relative overflow-hidden"
+        style={{ background: recipe.imageUrl ? undefined : cardGradient(recipe.name) }}
       >
+        {recipe.imageUrl ? (
+          <img
+            src={recipe.imageUrl}
+            alt={recipe.name}
+            className="w-full h-full object-cover"
+          />
+        ) : null}
         <div className="absolute inset-[6px] border border-white/25" />
         <span className="absolute bottom-3 right-3 bg-card-bg text-text-light text-[11px] font-medium tracking-[0.05em] px-[10px] py-[3px] rounded-lg font-body">
           {recipe.cookTime}
