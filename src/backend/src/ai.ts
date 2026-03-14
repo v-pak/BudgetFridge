@@ -30,16 +30,18 @@ const recipeSchema = z.object({
   'steps': z.array(z.string())
 });
 
+const listRecipeSchema = z.array(recipeSchema)
+
 // responseMimeType enforces a JSON response
 export async function generateRecipe(req: RecipeRequest) {
-  const prompt = `Using the following list of ingredients, generate a recipe. ${JSON.stringify(req.ingredients, null, 2)}`
+  const prompt = `Using the following list of ingredients, generate three unique recipes. ${JSON.stringify(req.ingredients, null, 2)}`
 
   const response = await ai.models.generateContent({
     model: 'gemini-2.5-flash-lite',
     contents: prompt,
     config: {
       responseMimeType: 'application/json',
-      responseJsonSchema: recipeSchema.toJSONSchema()
+      responseJsonSchema: listRecipeSchema.toJSONSchema()
     }
   });
 
@@ -48,25 +50,24 @@ export async function generateRecipe(req: RecipeRequest) {
 }
 
 // EXAMPLE USE
-const res = await generateRecipe({
-  ingredients: [
-    {
-    name: 'carrot',
-    amount: '3'
-    },
-    {
-    name: 'apple',
-    amount: '4'
-    },
-    {
-    name: 'potato',
-    amount: '7'
-    },
-    {
-    name: 'chicken leg',
-    amount: '5'
-    }
-  ]
-});
-
-console.log(res);
+// const res = await generateRecipe({
+//   ingredients: [
+//     {
+//     name: 'carrot',
+//     amount: '3'
+//     },
+//     {
+//     name: 'apple',
+//     amount: '4'
+//     },
+//     {
+//     name: 'potato',
+//     amount: '7'
+//     },
+//     {
+//     name: 'chicken leg',
+//     amount: '5'
+//     }
+//   ]
+// });
+// console.log(res);
