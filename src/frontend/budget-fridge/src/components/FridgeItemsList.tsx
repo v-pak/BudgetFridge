@@ -1,9 +1,9 @@
-import { FridgeItem } from './FridgeItem';
+import type { FridgeItem } from '../utils/types';
+import { FridgeItemComponent } from './FridgeItem';
 
-type Item = { name: string; qty: string };
 
 type FridgeItemsListProps = {
-    items: Item[];
+    items: FridgeItem[];
     onRemove: (index: number) => void;
 };
 
@@ -11,11 +11,11 @@ export function FridgeItemsList({ items, onRemove }: FridgeItemsListProps) {
     return (
         <ul className="w-full max-w-[360px]">
             {items.map((item, index) => (
-                <FridgeItem
+                <FridgeItemComponent
                     key={index}
                     index={index}
                     name={item.name}
-                    qty={item.qty}
+                    qty={item.quantity}
                     onRemove={onRemove}
                 />
             ))}

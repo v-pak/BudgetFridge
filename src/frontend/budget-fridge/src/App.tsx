@@ -3,10 +3,9 @@ import LeftPanel from './components/LeftPanel';
 import { RightPanel } from './components/RightPanel';
 import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import { useFridgeItems } from './hooks/useFridgeItems';
+import { RecipeProvider } from './context/RecipeProvider';
 
 function Layout() {
-  const { items, addItem, removeItem } = useFridgeItems();
   const isLanding = useLocation().pathname === '/';
 
   return (
@@ -15,8 +14,8 @@ function Layout() {
       <main className="pt-[73px]">
         {isLanding ? (
           <div className="grid grid-cols-2 min-h-[calc(100vh-73px)]">
-            <LeftPanel onAdd={addItem} />
-            <RightPanel items={items} onRemove={removeItem} />
+            <LeftPanel />
+            <RightPanel />
           </div>
         ) : (
           <Outlet />
@@ -29,14 +28,16 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" />
-          <Route path="/loading" />
-          <Route path="/recipe" />
-          <Route path="/my-recipes" />
-        </Route>
-      </Routes>
+      <RecipeProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" />
+            <Route path="/loading" />
+            <Route path="/recipe" />
+            <Route path="/my-recipes" />
+          </Route>
+        </Routes>
+      </RecipeProvider>
     </BrowserRouter>
   );
 }

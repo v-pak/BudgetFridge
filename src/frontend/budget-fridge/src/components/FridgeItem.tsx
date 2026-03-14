@@ -5,7 +5,7 @@ type FridgeItemProps = {
     onRemove: (index: number) => void;
 };
 
-export function FridgeItem({ index, name, qty, onRemove }: FridgeItemProps) {
+export function FridgeItemComponent({ index, name, qty, onRemove }: FridgeItemProps) {
     return (
         <li className="flex justify-between items-center py-[14px] border-b border-border text-[14px]">
             <span className="text-[11px] text-text-light font-light w-7 shrink-0">

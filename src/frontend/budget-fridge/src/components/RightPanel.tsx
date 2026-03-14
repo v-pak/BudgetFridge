@@ -1,15 +1,10 @@
 import { FridgeItemsList } from './FridgeItemsList';
 import PillButton from './PillButton';
 import { useNavigate } from 'react-router-dom';
+import { useRecipe } from '../hooks/useRecipe';
 
-type Item = { name: string; qty: string };
-
-type RightPanelProps = {
-    items: Item[];
-    onRemove: (index: number) => void;
-};
-
-export function RightPanel({ items, onRemove }: RightPanelProps) {
+export function RightPanel() {
+    const { ingredients, removeIngredient } = useRecipe();
     const navigate = useNavigate();
 
     return (
@@ -19,12 +14,12 @@ export function RightPanel({ items, onRemove }: RightPanelProps) {
                 <span className="flex-1 h-px bg-accent opacity-40" />
             </div>
 
-            <FridgeItemsList items={items} onRemove={onRemove} />
+            <FridgeItemsList items={ingredients} onRemove={removeIngredient} />
 
             <PillButton
                 variant="filled-dark"
                 trailingArrow
-                disabled={items.length === 0}
+                disabled={ingredients.length === 0}
                 onClick={() => navigate('/loading')}
                 className="mt-9 w-full max-w-[360px]"
             >
