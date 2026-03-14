@@ -2,7 +2,7 @@ export interface FridgeItem {
   name: string;
   quantity: string;
 }
- 
+
 export interface Recipe {
   name: string;
   imageDescription: string;
@@ -19,16 +19,16 @@ export interface RecipeContextValue {
   setIngredients: (items: FridgeItem[]) => void;
   addIngredient: (item: FridgeItem) => void;
   removeIngredient: (index: number) => void;
- 
+
   /** Recipes returned by the API */
   recipes: Recipe[];
   setRecipes: (recipes: Recipe[]) => void;
- 
+
   /** Index of the currently displayed recipe (0-based) */
   currentRecipeIndex: number;
   setCurrentRecipeIndex: (index: number) => void;
   nextRecipe: () => void;
- 
+
   /** Reset all transient state (call after a new generation) */
   reset: () => void;
 }
