@@ -16,7 +16,7 @@ export default function LeftPanel() {
 
     return (
         <div className="flex flex-col justify-center items-center text-center px-[60px] py-[80px]">
-            <h1 className="font-heading text-[72px] font-bold leading-[0.95] tracking-[-1px] text-text mb-3">
+            <h1 className="font-heading text-[72px] font-bold leading-[0.95] tracking-[-1px] text-text mb-3 py-4">
                 What's in<br />your fridge?
             </h1>
             <InputGroup
