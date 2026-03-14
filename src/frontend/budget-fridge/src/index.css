@@ -13,6 +13,11 @@
 
   --font-heading: "Averia Serif Libre", serif;
   --font-body: "Noto Sans", sans-serif;
+
+  --radius-pill: 24px;
+  --radius-input: 12px;
+  --radius-card: 16px;
+  --radius-popup: 20px;
 }
 
 :root {
@@ -20,7 +25,7 @@
 }
 
 body {
-  background-color: var(--colour-bg);
+  background-color: var(--color-bg);
 }
 
 body::before {
