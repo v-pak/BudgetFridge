@@ -46,7 +46,7 @@ app.use((req: Request, res: Response) => {
 });
 
 // Serve the built frontend
-app.use(express.static(path.join(__dirname, "../../frontend/budget-fridge/dist")));
+// app.use(express.static(path.join(__dirname, "../../frontend/budget-fridge/dist")));
 
 // SPA fallback
 // If the route exists in the frontend and not in the backend,
