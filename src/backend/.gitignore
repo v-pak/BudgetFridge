@@ -1,0 +1,9 @@
+*.json
+!package.json
+node_modules
+
+# Dependency directory
+node_modules/
+
+# Ignore built ts files
+dist/**/*
