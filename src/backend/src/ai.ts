@@ -15,6 +15,11 @@ const ai = new GoogleGenAI({
 
 // responseMimeType enforces a JSON response
 export async function generateRecipe(req: RecipeRequest) {
+  // check ingredients list
+  if (!req.ingredients || req.ingredients.length === 0) {
+    throw new Error('Empty or missing ingredients array');
+  }
+  
   const prompt = `Using the following list of ingredients, generate three unique recipes. ${JSON.stringify(req, null, 2)}`
 
   const response = await ai.models.generateContent({
