@@ -19,9 +19,6 @@ export default function LeftPanel() {
             <h1 className="font-heading text-[72px] font-bold leading-[0.95] tracking-[-1px] text-text mb-3">
                 What's in<br />your fridge?
             </h1>
-            <p className="font-heading text-[28px] font-normal text-text-light mb-12">
-                cook something beautiful
-            </p>
             <InputGroup
                 ingredient={ingredient}
                 setIngredient={setIngredient}
