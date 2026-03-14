@@ -20,15 +20,15 @@ export function InputGroup({ ingredient, setIngredient, amount, setAmount, onAdd
                 <InputElement
                     className="flex-1 font-body text-[15px] px-5 py-[14px] border border-border rounded-[12px] bg-bg text-text placeholder:text-text-light placeholder:opacity-60 outline-none focus:border-accent transition-colors duration-300"
                     type="text"
-                    placeholder="add an ingredient…"
+                    placeholder="Garlic"
                     val={ingredient}
                     setVal={setIngredient}
                     onKeyDown={handleKeyDown}
                 />
                 <InputElement
-                    className="w-[80px] font-body text-[15px] px-5 py-[14px] border border-border rounded-[12px] bg-bg text-text placeholder:text-text-light placeholder:opacity-60 outline-none focus:border-accent transition-colors duration-300"
+                    className="w-[120px] font-body text-[15px] px-5 py-[14px] border border-border rounded-[12px] bg-bg text-text placeholder:text-text-light placeholder:opacity-60 outline-none focus:border-accent transition-colors duration-300"
                     type="text"
-                    placeholder="qty"
+                    placeholder="15 Cloves"
                     val={amount}
                     setVal={setAmount}
                     onKeyDown={handleKeyDown}
