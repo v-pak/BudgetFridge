@@ -8,17 +8,22 @@ import {
 // Loads API key from .env
 dotenv.config();
 
-// The client gets the API key from the environment variable `GEMINI_API_KEY`
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY
-});
-
 // responseMimeType enforces a JSON response
 export async function generateRecipe(req: RecipeRequest) {
+  // check API key
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error('API key is missing');
+  }
+
   // check ingredients list
   if (!req) {
     throw new Error('Empty or missing ingredients array');
   }
+
+  // The client gets the API key from the environment variable `GEMINI_API_KEY`
+  const ai = new GoogleGenAI({
+    apiKey: process.env.GEMINI_API_KEY
+  });
   
   const prompt = `Using the following list of ingredients, generate three unique recipes. ${JSON.stringify(req, null, 2)}`
 
