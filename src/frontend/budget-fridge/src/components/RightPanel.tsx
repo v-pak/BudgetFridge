@@ -1,19 +1,35 @@
 import { FridgeItemsList } from './FridgeItemsList';
+import PillButton from './PillButton';
+import { useNavigate } from 'react-router-dom';
 
-export function RightPanel() {
-    const placeholderItems = [
-        { name: 'Chicken thighs', qty: '500g' },
-        { name: 'Jasmine rice', qty: '2 cups' },
-        { name: 'Broccoli', qty: '1 head' },
-    ];
+type Item = { name: string; qty: string };
+
+type RightPanelProps = {
+    items: Item[];
+    onRemove: (index: number) => void;
+};
+
+export function RightPanel({ items, onRemove }: RightPanelProps) {
+    const navigate = useNavigate();
 
     return (
-        <div className="panel-right">
-            <div className="fridge-header">
+        <div className="flex flex-col items-center px-[60px] py-[60px] bg-bg-warm border-l border-border relative">
+            <div className="flex items-center gap-3 w-full max-w-[360px] mb-8 font-heading text-[28px] font-medium text-text">
                 Your Fridge
-                <span className="fridge-header-line" />
+                <span className="flex-1 h-px bg-accent opacity-40" />
             </div>
-            <FridgeItemsList items={placeholderItems} />
+
+            <FridgeItemsList items={items} onRemove={onRemove} />
+
+            <PillButton
+                variant="filled-dark"
+                trailingArrow
+                disabled={items.length === 0}
+                onClick={() => navigate('/loading')}
+                className="mt-9 w-full max-w-[360px]"
+            >
+                Generate Recipes
+            </PillButton>
         </div>
     );
 }
