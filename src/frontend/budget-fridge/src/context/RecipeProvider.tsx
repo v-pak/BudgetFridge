@@ -2,7 +2,7 @@ import { createContext, useState, useCallback, type ReactNode } from 'react';
 import type { FridgeItem, Recipe, RecipeContextValue } from '../utils/types';
 import { loadFridgeItems, saveFridgeItems } from '../utils/storage';
 
-const RecipeContext = createContext<RecipeContextValue | null>(null);
+export const RecipeContext = createContext<RecipeContextValue | null>(null);
 
 export function RecipeProvider({ children }: { children: ReactNode }) {
   const [ingredients, setIngredientsState] = useState<FridgeItem[]>(loadFridgeItems);
