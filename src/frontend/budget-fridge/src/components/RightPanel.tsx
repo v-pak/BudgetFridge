@@ -1,11 +1,28 @@
 import { FridgeItemsList } from './FridgeItemsList';
 import PillButton from './PillButton';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useRecipe } from '../hooks/useRecipe';
+import type { FridgeItem } from '../utils/types';
+
+export async function getRecipes(ingredients: FridgeItem[]) {
+  console.log(ingredients);
+  console.log(JSON.stringify(ingredients));
+  const res = await fetch("/api/recipes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(ingredients)
+  });
+
+  const data = await res.json();
+  console.log(data);
+  console.log('hello?? front end???')
+}
 
 export function RightPanel() {
     const { ingredients, removeIngredient } = useRecipe();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <div className="flex flex-col items-center px-[60px] py-[60px] bg-bg-warm border-l border-border relative">
@@ -20,7 +37,7 @@ export function RightPanel() {
                 variant="filled-dark"
                 trailingArrow
                 disabled={ingredients.length === 0}
-                onClick={() => navigate('/loading')}
+                onClick={() => getRecipes(ingredients)}
                 className="mt-9 w-full max-w-[360px]"
             >
                 Generate Recipes
