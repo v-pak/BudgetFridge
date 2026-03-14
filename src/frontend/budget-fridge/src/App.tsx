@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import { RecipeProvider } from './context/RecipeProvider';
+import RecipePage from './pages/RecipePage';
 
 function Layout() {
   return (
@@ -15,14 +17,16 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" />
-          <Route path="/loading" />
-          <Route path="/recipe" />
-          <Route path="/my-recipes" />
-        </Route>
-      </Routes>
+      <RecipeProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" />
+            <Route path="/loading" />
+            <Route path="/recipe" element={<RecipePage />} />
+            <Route path="/my-recipes" />
+          </Route>
+        </Routes>
+      </RecipeProvider>
     </BrowserRouter>
   );
 }
