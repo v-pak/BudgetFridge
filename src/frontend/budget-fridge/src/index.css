@@ -35,7 +35,9 @@ body::before {
   background-image: var(--grain);
   background-repeat: repeat;
   background-size: 200px;
-  pointer-events: none;  /* won't block clicks */
-  z-index: 9999;         /* sits above everything */
+  pointer-events: none;
+  /* won't block clicks */
+  z-index: 9999;
+  /* sits above everything */
   opacity: 0.5;
 }

@@ -1,16 +1,28 @@
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import './index.css';
+import LeftPanel from './components/LeftPanel';
+import { RightPanel } from './components/RightPanel';
+import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import { RecipeProvider } from './context/RecipeProvider';
 import RecipePage from './pages/RecipePage';
 
 function Layout() {
+  const isLanding = useLocation().pathname === '/';
+
   return (
-    <>
+    <div className="min-h-screen bg-bg text-text font-body">
       <NavBar />
-      <main className="pt-18.25"> {/* offset for the fixed nav height */}
-        <Outlet />
+      <main className="pt-[73px]">
+        {isLanding ? (
+          <div className="grid grid-cols-2 min-h-[calc(100vh-73px)]">
+            <LeftPanel />
+            <RightPanel />
+          </div>
+        ) : (
+          <Outlet />
+        )}
       </main>
-    </>
+    </div>
   );
 }
 
