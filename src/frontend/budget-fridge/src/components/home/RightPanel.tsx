@@ -2,25 +2,17 @@ import { FridgeItemsList } from './FridgeItemsList';
 import PillButton from '../utils/PillButton';
 import { useNavigate } from 'react-router-dom';
 import { useRecipe } from '../../context/RecipeContext';
-import type { FridgeItem } from '../../utils/types';
+import { fetchRecipes } from '../../api/recipes';
 
 export function RightPanel() {
-  const { ingredients, removeIngredient } = useRecipe();
+  const { ingredients, removeIngredient, setRecipes } = useRecipe();
   const navigate = useNavigate();
 
-  async function getRecipes(ingredients: FridgeItem[]) {
+  async function getRecipes() {
     navigate('/loading');
-    console.log(ingredients);
     try {
-      const res = await fetch("/api/recipes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(ingredients)
-      });
-      const data = await res.json();
-      console.log(data);
+      const recipes = await fetchRecipes(ingredients);
+      setRecipes(recipes);
       navigate('/recipe');
     } catch (err) {
       console.error('Failed to fetch recipes:', err);
@@ -38,7 +30,7 @@ export function RightPanel() {
         variant="filled-dark"
         trailingArrow
         disabled={ingredients.length === 0}
-        onClick={() => getRecipes(ingredients)}
+        onClick={getRecipes}
         className="mt-9 w-full max-w-[360px]"
       >
         Generate Recipes
