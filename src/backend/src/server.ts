@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import config from './config.json';
 import process from 'process';
+import recipesExample from './generateRecipe_responses.json';
 
 const PORT: number = parseInt(process.env.PORT || config.port);
 const HOST: string = process.env.IP || '127.0.0.1';
@@ -20,6 +21,10 @@ app.use(morgan('dev'));
 // ====================================================================
 // ========================= API ROUTES ===============================
 // ====================================================================
+
+app.post('/api/recipes', async (req: Request, res: Response) => {
+  res.json(recipesExample);
+});
 
 app.use((req: Request, res: Response) => {
   res.status(404).json({ error: 'ROUTE_NOT_FOUND' });
