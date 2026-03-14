@@ -33,7 +33,8 @@ export function saveRecipe(recipe: Recipe): boolean {
 }
 
 /** Removes the recipe matching the given name from localStorage. */
-export function deleteRecipe(name: string): void {
+export function deleteRecipe(name: string): Recipe[] {
   const updated = getSavedRecipes().filter((r) => r.name !== name);
   localStorage.setItem(SAVED_KEY, JSON.stringify(updated));
+  return updated;
 }
