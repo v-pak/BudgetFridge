@@ -1,5 +1,5 @@
-import type { Recipe } from '../utils/types';
-import { cardGradient } from '../utils/cardGradient';
+import type { Recipe } from '../../utils/types';
+import { cardGradient } from '../../utils/cardGradient';
 
 interface RecipeCardProps {
   recipe: Recipe;

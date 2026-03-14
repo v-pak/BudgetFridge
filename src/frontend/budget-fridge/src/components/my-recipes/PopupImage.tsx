@@ -1,4 +1,4 @@
-import { cardGradient } from '../utils/cardGradient';
+import { cardGradient } from '../../utils/cardGradient';
 
 interface PopupImageProps {
   recipeName: string;

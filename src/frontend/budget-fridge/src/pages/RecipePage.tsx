@@ -1,7 +1,8 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecipe } from '../context/RecipeContext';
-import PillButton from '../components/PillButton';
+import PillButton from '../components/utils/PillButton';
+import SectionTitle from '../components/utils/SectionTitle';
 import { saveRecipe } from '../utils/storage';
 
 export default function RecipePage() {
@@ -117,11 +118,3 @@ export default function RecipePage() {
   );
 }
 
-function SectionTitle({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex items-center gap-3 font-heading text-[22px] font-medium text-text mb-4">
-      {children}
-      <span className="flex-1 h-px bg-accent opacity-30" />
-    </div>
-  );
-}

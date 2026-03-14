@@ -1,4 +1,4 @@
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../utils/SectionTitle';
 
 interface PopupStepsProps {
   steps: string[];

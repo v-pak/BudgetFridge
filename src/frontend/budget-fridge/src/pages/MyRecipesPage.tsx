@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { Recipe } from './utils/types';
-import { getSavedRecipes, deleteRecipe } from './utils/storage';
-import RecipeCardGrid from './components/RecipeCardGrid';
-import RecipePopup from './components/RecipePopUp';
-import EmptyState from './components/EmptyState';
+import type { Recipe } from '../utils/types';
+import { getSavedRecipes, deleteRecipe } from '../utils/storage';
+import RecipeCardGrid from '../components/my-recipes/RecipeCardGrid';
+import RecipePopup from '../components/my-recipes/RecipePopUp';
+import EmptyState from '../components/my-recipes/EmptyState';
 
 export default function MyRecipesPage() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);

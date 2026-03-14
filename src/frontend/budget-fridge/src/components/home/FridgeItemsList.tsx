@@ -1,4 +1,4 @@
-import type { FridgeItem } from '../utils/types';
+import type { FridgeItem } from '../../utils/types';
 import { FridgeItemComponent } from './FridgeItem';
 
 
