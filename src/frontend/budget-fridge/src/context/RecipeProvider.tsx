@@ -2,6 +2,7 @@ import { useState, useCallback, type ReactNode } from 'react';
 import type { FridgeItem, Recipe } from '../utils/types';
 import { loadFridgeItems, saveFridgeItems } from '../utils/storage';
 import { RecipeContext } from './RecipeContext';
+import { useRecipeImages } from '../hooks/useRecipeImages';
 
 // const DEV_RECIPES: Recipe[] = [
 //   {
@@ -122,6 +123,14 @@ export function RecipeProvider({ children }: { children: ReactNode }) {
   const [ingredients, setIngredientsState] = useState<FridgeItem[]>(loadFridgeItems);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0);
+
+  // Wrapped callback for updating recipes
+  const updateRecipes = useCallback((newRecipes: Recipe[]) => {
+    setRecipes(newRecipes);
+  }, []);
+
+  // Fetch images for recipes that don't have them
+  useRecipeImages(recipes, updateRecipes);
 
   const setIngredients = useCallback((items: FridgeItem[]) => {
     setIngredientsState(items);
