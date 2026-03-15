@@ -9,7 +9,7 @@ export default function RecipeImagePanel() {
     <div className="bg-bg-warm flex items-center justify-center p-15 border-r border-border relative">
       <div
         className="
-          w-full max-w-110 aspect-4/3
+          w-full h-full
           bg-linear-to-br from-[#DDD6CB] to-[#C8BFB2]
           border border-border rounded-card
           shadow-[0_8px_40px_rgba(44,40,36,0.08)]

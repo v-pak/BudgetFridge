@@ -19,14 +19,14 @@ export default function RecipeCard({ recipe, onClick }: RecipeCardProps) {
       "
     >
       <div
-        className="w-full aspect-[4/3] relative overflow-hidden"
+        className="w-full h-48 relative overflow-hidden"
         style={{ background: recipe.imageUrl ? undefined : cardGradient(recipe.name) }}
       >
         {recipe.imageUrl ? (
           <img
             src={recipe.imageUrl}
             alt={recipe.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-75"
           />
         ) : null}
         <div className="absolute inset-[6px] border border-white/25" />

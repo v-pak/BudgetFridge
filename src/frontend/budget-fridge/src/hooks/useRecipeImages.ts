@@ -21,7 +21,7 @@ const DISH_IMAGES: { [key: string]: string[] } = {
     'https://images.unsplash.com/photo-1618449840665-9ed506d73a34?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3Vycnl8ZW58MHx8MHx8fDA%3D'
   ],
   'bowl': [
-    'https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJvd2x8ZW58MHx8MHx8fDA%3D'
+    'https://images.unsplash.com/photo-1609183480237-ccbb2d7c5772?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVyaXlha2klMjBDaGlja2VufGVufDB8fDB8fHww'
   ],
   'sauté': [
     'https://plus.unsplash.com/premium_photo-1723795276835-f007ade51aad?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2F1dGV8ZW58MHx8MHx8fDA%3D'
