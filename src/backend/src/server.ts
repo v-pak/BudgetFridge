@@ -10,7 +10,7 @@ import { generateRecipe } from './ai';
 dotenv.config();
 
 const PORT: number = parseInt(process.env.PORT || '3200');
-const HOST: string = process.env.IP || '127.0.0.1';
+const HOST: string = process.env.HOST || '0.0.0.0';
 
 // Set up web app
 const app = express();
@@ -35,10 +35,10 @@ app.post('/api/recipes', async (req: Request, res: Response) => {
     const recipe = await generateRecipe(req.body);
     res.json(recipe);
   } catch (err) {
-    if (err instanceof Error && err.message === 'API key is missing') { 
-      res.status(500).json({ error: err.message }); 
+    if (err instanceof Error && err.message === 'API key is missing') {
+      res.status(500).json({ error: err.message });
     } else if (err instanceof Error && err.message === 'Empty or missing ingredients array') {
-    res.status(400).json({ error: err.message });
+      res.status(400).json({ error: err.message });
     } else {
       res.status(500).json({ error: "Internal Server Error" });
     }
