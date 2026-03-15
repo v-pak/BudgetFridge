@@ -11,5 +11,7 @@ export async function fetchRecipes(ingredients: FridgeItem[]): Promise<Recipe[]>
     throw new Error(`Failed to fetch recipes: ${res.status} ${res.statusText}`);
   }
 
-  return res.json() as Promise<Recipe[]>;
+  const data = await res.json() as Recipe[];
+  console.log(data);
+  return data;
 }
