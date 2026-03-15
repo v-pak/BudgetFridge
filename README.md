@@ -3,8 +3,6 @@ Demo at [https://budget-fridge-seven.vercel.app](https://budget-fridge-seven.ver
 
 A recipe generation app that takes the ingredients in your fridge and uses the Gemini API to suggest recipes you can cook right now.
 
-![BudgetFridge UI](https://raw.githubusercontent.com/v-pak/BudgetFridge/main/src/frontend/budget-fridge/public/favicon.svg)
-
 ---
 
 ## What it does
