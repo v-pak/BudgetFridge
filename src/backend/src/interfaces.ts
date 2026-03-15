@@ -6,8 +6,8 @@ export interface RecipeRequest {
 
 // Enforces a schema
 export const ingredientSchema = z.object({
-  name: z.string(),
-  quantity: z.string()
+  item: z.string(),
+  amount: z.string()
 });
 
 export const recipeSchema = z.object({
