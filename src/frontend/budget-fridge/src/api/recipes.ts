@@ -1,7 +1,8 @@
 import type { FridgeItem, Recipe } from '../utils/types';
 
 export async function fetchRecipes(ingredients: FridgeItem[]): Promise<Recipe[]> {
-  const res = await fetch('/api/recipes', {
+  const base = import.meta.env.VITE_API_URL ?? '';
+  const res = await fetch(`${base}/api/recipes`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(ingredients),
