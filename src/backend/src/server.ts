@@ -9,7 +9,7 @@ import { generateRecipe } from './ai';
 // Loads API key from .env
 dotenv.config();
 
-const PORT: number = parseInt(process.env.PORT || config.port);
+const PORT: number = parseInt(process.env.PORT || '3200');
 const HOST: string = process.env.IP || '127.0.0.1';
 
 // Set up web app
