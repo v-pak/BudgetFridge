@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: process.env.VITE_API_URL || 'http://localhost:3200',
+        target: 'https://budgetfridge.onrender.com',
         changeOrigin: true
       }
     }
