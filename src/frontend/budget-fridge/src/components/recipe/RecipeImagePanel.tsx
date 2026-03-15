@@ -29,7 +29,7 @@ export default function RecipeImagePanel() {
         </span>
       </div>
       <span className="absolute bottom-5 left-6 font-heading text-[12px] text-accent opacity-50">
-        → generated image
+        → image acquired from unsplash
       </span>
     </div>
   );
