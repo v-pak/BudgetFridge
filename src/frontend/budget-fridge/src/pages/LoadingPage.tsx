@@ -1,17 +1,7 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useRecipe } from '../context/RecipeContext';
 
 export default function LoadingPage() {
   const { ingredients } = useRecipe();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate('/recipe');
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, [navigate]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-73px)]">
