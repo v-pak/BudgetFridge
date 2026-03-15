@@ -28,6 +28,15 @@ body {
   background-color: var(--color-bg);
 }
 
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+.animate-bob {
+  animation: bob 1.2s ease-in-out infinite;
+}
+
 body::before {
   content: '';
   position: fixed;
