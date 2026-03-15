@@ -1,7 +1,7 @@
 import z from 'zod';
 
 export interface RecipeRequest {
-  ingredients: { name: string, amount: string }[]
+  ingredients: { name: string, quantity: string }[]
 }
 
 // Enforces a schema
