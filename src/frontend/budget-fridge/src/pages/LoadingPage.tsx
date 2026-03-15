@@ -13,7 +13,7 @@ export default function LoadingPage() {
             finding the perfect recipe…
           </p>
           <p className="text-[13px] text-text-light opacity-60 italic">
-            crafting ideas from {ingredients.length} ingredient{ingredients.length !== 1 ? 's' : ''}
+            crafting ideas from selected ingredient{ingredients.length !== 1 ? 's' : ''}
           </p>
         </div>
       </div>

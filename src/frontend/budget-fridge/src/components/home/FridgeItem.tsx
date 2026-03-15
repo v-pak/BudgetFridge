@@ -1,13 +1,31 @@
+import { Checkbox } from "./Checkbox";
+
 type FridgeItemProps = {
   index: number;
   name: string;
   qty: string;
+  selected: boolean;
+  onToggle: (index: number) => void;
   onRemove: (index: number) => void;
 };
 
-export function FridgeItemComponent({ index, name, qty, onRemove }: FridgeItemProps) {
+export function FridgeItemComponent({ index, name, qty, selected, onToggle, onRemove }: FridgeItemProps) {
   return (
-    <li className="flex justify-between items-center py-[14px] border-b border-border text-[14px]">
+    <li
+      className={`
+        flex items-center py-[14px] border-b border-border text-[14px]
+        transition-opacity duration-200
+        ${!selected ? 'opacity-40' : ''}
+      `}
+    >
+      {/* Checkbox */}
+      <Checkbox
+        name={name}
+        index={index}
+        selected={selected}
+        onToggle={onToggle}
+      />
+
       <span className="text-[11px] text-text-light font-light w-7 shrink-0">
         {String(index + 1).padStart(2, '0')}.
       </span>
